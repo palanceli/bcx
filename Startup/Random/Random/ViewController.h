@@ -13,6 +13,7 @@
 }
 - (IBAction)seed:(id)sender;
 - (IBAction)generate:(id)sender;
+- (IBAction)awakeFromNib;
 
 
 @end

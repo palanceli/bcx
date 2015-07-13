@@ -41,4 +41,11 @@
     [textField setStringValue:@"Generator seeded"];
 }
 
+- (IBAction)awakeFromNib
+{
+    NSDate* now;
+    now = [NSDate date];
+    [textField setObjectValue:now];
+}
+
 @end
