@@ -9,7 +9,13 @@
 #import <Cocoa/Cocoa.h>
 
 @interface ViewController : NSViewController
+{
+    NSSpeechSynthesizer* _speechSynth;
+}
 
+- (IBAction)StopIt:(id)sender;
+- (IBAction)SayIt:(id)sender;
+@property (weak) IBOutlet NSTextField *textField;
 
 @end
 
