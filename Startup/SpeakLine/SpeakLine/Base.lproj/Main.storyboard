@@ -682,20 +682,29 @@
                             </textField>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dXN-qh-yC4">
                                 <rect key="frame" x="173" y="33" width="122" height="19"/>
-                                <buttonCell key="cell" type="roundRect" title="Round Rect Button" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3Kc-H4-FCU">
+                                <buttonCell key="cell" type="roundRect" title="Stop" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="3Kc-H4-FCU">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="controlContent"/>
+                                    <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="StopIt:" target="XfG-lQ-9wD" id="9oq-Ri-JCm"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z1b-O2-h0b">
                                 <rect key="frame" x="320" y="33" width="122" height="19"/>
-                                <buttonCell key="cell" type="roundRect" title="Round Rect Button" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eqs-Ib-A7g">
+                                <buttonCell key="cell" type="roundRect" title="Speak" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="eqs-Ib-A7g">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="controlContent"/>
+                                    <font key="font" metaFont="cellTitle"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="SpeakIt:" target="XfG-lQ-9wD" id="nlo-Rg-Fqx"/>
+                                </connections>
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <outlet property="textField" destination="pcU-OB-xc7" id="qkV-eh-UmX"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
