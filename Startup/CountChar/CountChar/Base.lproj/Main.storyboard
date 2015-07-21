@@ -673,10 +673,13 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AVo-zG-hND">
-                                <rect key="frame" x="179" y="75" width="122" height="19"/>
-                                <buttonCell key="cell" type="roundRect" title="Count Characters" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bUD-co-dWy">
+                                <rect key="frame" x="179" y="75" width="122" height="32"/>
+                                <buttonCell key="cell" type="push" title="Count Characters" bezelStyle="rounded" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="bUD-co-dWy">
                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="controlContent"/>
+                                    <font key="font" metaFont="system"/>
+                                    <string key="keyEquivalent" base64-UTF8="YES">
+DQ
+</string>
                                 </buttonCell>
                                 <connections>
                                     <action selector="countCharacters:" target="XfG-lQ-9wD" id="EwO-Yg-Qe0"/>
