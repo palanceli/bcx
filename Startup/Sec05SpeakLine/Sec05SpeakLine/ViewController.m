@@ -23,17 +23,11 @@
     // Update the view, if already loaded.
 }
 
--(id)init
+
+- (void)awakeFromNib
 {
-    self = [super init];
-    if(self){
-        // 日志可帮助开发者理解程序运作，并可找出bug
-        NSLog(@"init");
-        
-        // 创建NSSpeechSynthesizer的一个新实例，该实例使用默认声音
-        _speechSynth = [[NSSpeechSynthesizer alloc]initWithVoice:nil];
-    }
-    return self;
+    // 创建NSSpeechSynthesizer的一个新实例，该实例使用默认声音
+    _speechSynth = [[NSSpeechSynthesizer alloc] initWithVoice:nil];
 }
 
 - (IBAction)stopIt:(id)sender {
