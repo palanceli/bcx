@@ -20,6 +20,7 @@ int main(int argc, const char * argv[]) {
         for(BNRItem *item in items){
             NSLog(@"%@", item);
         }
+        NSLog(@"%@", items[11]);
     }
     return 0;
 }
