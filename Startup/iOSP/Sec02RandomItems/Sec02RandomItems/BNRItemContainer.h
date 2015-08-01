@@ -16,4 +16,6 @@
 -(NSString*)description;
 -(int)valueInDollar;
 -(int)selfValueInDollar;
+-(void)addItem:(BNRItem*)item;
+-(instancetype)initWithItemName:(NSString *)name serialNumber:(NSString *)serialNumber valueInDollar:(int)value;
 @end

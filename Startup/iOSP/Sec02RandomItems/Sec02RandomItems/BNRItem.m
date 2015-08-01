@@ -96,4 +96,9 @@
     BNRItem *item = [[BNRItem alloc]initWithItemName:name serialNumber:serialNumber valueInDollar:valueInDollar];
     return item;
 }
+
+-(void)dealloc
+{
+    NSLog(@"Destroyed: %@", self);
+}
 @end
