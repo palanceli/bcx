@@ -14,7 +14,7 @@
 		F646D6BC1B6D0ED700596187 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F646D6BB1B6D0ED700596187 /* Images.xcassets */; };
 		F646D6BF1B6D0ED700596187 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F646D6BD1B6D0ED700596187 /* LaunchScreen.xib */; };
 		F646D6CB1B6D0ED800596187 /* Sec0402BNRHypnosisTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F646D6CA1B6D0ED800596187 /* Sec0402BNRHypnosisTests.m */; };
-		F646D6D61B6D0EF400596187 /* BNRHypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = F646D6D51B6D0EF400596187 /* BNRHypnosisView.m */; };
+		F646D6D91B6D284600596187 /* BNRHypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = F646D6D81B6D284600596187 /* BNRHypnosisView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,8 +41,8 @@
 		F646D6C41B6D0ED800596187 /* Sec0402BNRHypnosisTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Sec0402BNRHypnosisTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F646D6C91B6D0ED800596187 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F646D6CA1B6D0ED800596187 /* Sec0402BNRHypnosisTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sec0402BNRHypnosisTests.m; sourceTree = "<group>"; };
-		F646D6D41B6D0EF400596187 /* BNRHypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BNRHypnosisView.h; path = ../BNRHypnosisView.h; sourceTree = "<group>"; };
-		F646D6D51B6D0EF400596187 /* BNRHypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BNRHypnosisView.m; path = ../BNRHypnosisView.m; sourceTree = "<group>"; };
+		F646D6D71B6D284600596187 /* BNRHypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRHypnosisView.h; sourceTree = "<group>"; };
+		F646D6D81B6D284600596187 /* BNRHypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRHypnosisView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,10 +84,10 @@
 		F646D6AD1B6D0ED700596187 /* Sec0402BNRHypnosis */ = {
 			isa = PBXGroup;
 			children = (
+				F646D6D71B6D284600596187 /* BNRHypnosisView.h */,
+				F646D6D81B6D284600596187 /* BNRHypnosisView.m */,
 				F646D6B21B6D0ED700596187 /* AppDelegate.h */,
 				F646D6B31B6D0ED700596187 /* AppDelegate.m */,
-				F646D6D41B6D0EF400596187 /* BNRHypnosisView.h */,
-				F646D6D51B6D0EF400596187 /* BNRHypnosisView.m */,
 				F646D6B51B6D0ED700596187 /* ViewController.h */,
 				F646D6B61B6D0ED700596187 /* ViewController.m */,
 				F646D6B81B6D0ED700596187 /* Main.storyboard */,
@@ -226,7 +226,7 @@
 			files = (
 				F646D6B71B6D0ED700596187 /* ViewController.m in Sources */,
 				F646D6B41B6D0ED700596187 /* AppDelegate.m in Sources */,
-				F646D6D61B6D0EF400596187 /* BNRHypnosisView.m in Sources */,
+				F646D6D91B6D284600596187 /* BNRHypnosisView.m in Sources */,
 				F646D6B11B6D0ED700596187 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +422,7 @@
 				F646D6D01B6D0ED800596187 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F646D6D11B6D0ED800596187 /* Build configuration list for PBXNativeTarget "Sec0402BNRHypnosisTests" */ = {
 			isa = XCConfigurationList;
@@ -430,6 +431,7 @@
 				F646D6D31B6D0ED800596187 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
