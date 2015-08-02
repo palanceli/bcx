@@ -53,7 +53,7 @@
     [pathTriangle addLineToPoint:p0];
     [pathTriangle stroke];
 
-    // 绘制阴影
+    // 绘制阴影`
     CGContextSaveGState(currentContext);
     [pathTriangle addClip];
 
