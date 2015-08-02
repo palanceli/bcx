@@ -15,6 +15,8 @@
 		F646D6BF1B6D0ED700596187 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = F646D6BD1B6D0ED700596187 /* LaunchScreen.xib */; };
 		F646D6CB1B6D0ED800596187 /* Sec0402BNRHypnosisTests.m in Sources */ = {isa = PBXBuildFile; fileRef = F646D6CA1B6D0ED800596187 /* Sec0402BNRHypnosisTests.m */; };
 		F646D6D91B6D284600596187 /* BNRHypnosisView.m in Sources */ = {isa = PBXBuildFile; fileRef = F646D6D81B6D284600596187 /* BNRHypnosisView.m */; };
+		F6A980D61B6DCC85007D2955 /* 羽毛.png in Resources */ = {isa = PBXBuildFile; fileRef = F6A980D51B6DCC85007D2955 /* 羽毛.png */; };
+		F6A980DA1B6DD073007D2955 /* 苹果.png in Resources */ = {isa = PBXBuildFile; fileRef = F6A980D91B6DD073007D2955 /* 苹果.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,8 @@
 		F646D6CA1B6D0ED800596187 /* Sec0402BNRHypnosisTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Sec0402BNRHypnosisTests.m; sourceTree = "<group>"; };
 		F646D6D71B6D284600596187 /* BNRHypnosisView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BNRHypnosisView.h; sourceTree = "<group>"; };
 		F646D6D81B6D284600596187 /* BNRHypnosisView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BNRHypnosisView.m; sourceTree = "<group>"; };
+		F6A980D51B6DCC85007D2955 /* 羽毛.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "羽毛.png"; sourceTree = "<group>"; };
+		F6A980D91B6DD073007D2955 /* 苹果.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "苹果.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +70,8 @@
 		F646D6A21B6D0ED700596187 = {
 			isa = PBXGroup;
 			children = (
+				F6A980D91B6DD073007D2955 /* 苹果.png */,
+				F6A980D51B6DCC85007D2955 /* 羽毛.png */,
 				F646D6AD1B6D0ED700596187 /* Sec0402BNRHypnosis */,
 				F646D6C71B6D0ED800596187 /* Sec0402BNRHypnosisTests */,
 				F646D6AC1B6D0ED700596187 /* Products */,
@@ -204,7 +210,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6A980DA1B6DD073007D2955 /* 苹果.png in Resources */,
 				F646D6BA1B6D0ED700596187 /* Main.storyboard in Resources */,
+				F6A980D61B6DCC85007D2955 /* 羽毛.png in Resources */,
 				F646D6BF1B6D0ED700596187 /* LaunchScreen.xib in Resources */,
 				F646D6BC1B6D0ED700596187 /* Images.xcassets in Resources */,
 			);
