@@ -11,6 +11,8 @@
 
 @interface ViewController () <UIScrollViewDelegate>
 
+@property HypnosisView* hypnosisView;
+@property UIScrollView* scrollView;
 @end
 
 @implementation ViewController
@@ -20,12 +22,25 @@
     CGRect rectView = self.view.bounds;
     rectView.size.width *= 2.0;
     rectView.size.height *= 2.0;
-    UIScrollView *scrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
-    scrollView.contentSize = rectView.size;
-    [self.view addSubview:scrollView];
+    self.scrollView = [[UIScrollView alloc]initWithFrame:self.view.bounds];
+    self.scrollView.contentSize = rectView.size;
+    self.scrollView.pagingEnabled = NO;
+    self.scrollView.delegate = self;
+//    self.scrollView.scrollEnabled = YES;
+//    self.scrollView.bounces = NO;
+//    self.scrollView.bouncesZoom = NO;
+    self.scrollView.minimumZoomScale = 1;
+    self.scrollView.maximumZoomScale = 2;
+    [self.view addSubview:self.scrollView];
     
-    HypnosisView * hypnosisView = [[HypnosisView alloc]initWithFrame:rectView];
-    [scrollView addSubview:hypnosisView];
+    self.hypnosisView = [[HypnosisView alloc]initWithFrame:rectView];
+    [self.scrollView addSubview:self.hypnosisView];
+}
+
+-(UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView
+{
+    NSLog(@"zooming...");
+    return self.hypnosisView;
 }
 
 - (void)didReceiveMemoryWarning {
