@@ -15,23 +15,7 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" customClass="HypnosisView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cWg-89-Gqg">
-                                <rect key="frame" x="97" y="503" width="83" height="29"/>
-                                <segments>
-                                    <segment title="红"/>
-                                    <segment title="绿"/>
-                                    <segment title="蓝"/>
-                                </segments>
-                                <connections>
-                                    <action selector="onSelectColor:" destination="kh9-bI-dsS" eventType="valueChanged" id="FVm-4C-Dja"/>
-                                </connections>
-                            </segmentedControl>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <connections>
-                            <outlet property="colorSelector" destination="cWg-89-Gqg" id="ULx-RY-GBn"/>
-                        </connections>
                     </view>
                     <tabBarItem key="tabBarItem" title="Hypnosis" image="Hypno.png" id="VAx-wd-OP8"/>
                     <keyCommands/>

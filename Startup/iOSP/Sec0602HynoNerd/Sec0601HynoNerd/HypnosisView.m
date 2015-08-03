@@ -9,18 +9,17 @@
 #import "HypnosisView.h"
 @interface HypnosisView()
 @property (strong, nonatomic)UIColor *circleColor;
-@property (weak, nonatomic) IBOutlet UISegmentedControl *colorSelector;
 
 @end
 
 @implementation HypnosisView
 
--(instancetype)initWithCoder:(NSCoder *)aDecoder
+-(instancetype)initWithFrame:(CGRect)frame
 {
-    self = [super initWithCoder:aDecoder];
+    self = [super initWithFrame:frame];
     if(self){
-        self.backgroundColor = [UIColor whiteColor];
-        self.circleColor = [UIColor redColor];
+        self.backgroundColor = [UIColor clearColor];
+        self.circleColor = [UIColor lightGrayColor];
     }
     return self;
 }
@@ -38,29 +37,6 @@
     float blue = arc4random() % 100 / 100.0;
     
     self.circleColor = [UIColor colorWithRed:red green:green blue:blue alpha:1.0];
-}
-
-- (IBAction)onSelectColor:(id)sender {
-    UISegmentedControl *control = (UISegmentedControl *)sender;
-    if(control == self.colorSelector){
-        NSInteger x = control.selectedSegmentIndex;
-        switch (x) {
-            case 0:
-                self.circleColor = [UIColor colorWithRed:1.0 green:0.0 blue:0.0 alpha:1.0];
-                break;
-            case 1:
-                self.circleColor = [UIColor colorWithRed:0.0 green:1.0 blue:0.0 alpha:1.0];
-                break;
-            case 2:
-                self.circleColor = [UIColor colorWithRed:0.0 green:0.0 blue:1.0 alpha:1.0];
-                break;
-                
-            default:
-                break;
-        }
-    }
-    
-   
 }
 
 -(void)drawRect:(CGRect)rect
