@@ -29,7 +29,8 @@
 
 -(NSString*)description
 {
-    return [NSString stringWithFormat:@"%@ (%@): $%d, recorded on %@", self.itemName, self.itemSerial, self.valueInDollar, self.createdDate];
+    NSString *dateTimeString = [NSDateFormatter localizedStringFromDate:self.createdDate dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle];
+    return [NSString stringWithFormat:@"%@ (%@): $%d, recorded on %@", self.itemName, self.itemSerial, self.valueInDollar, dateTimeString];
 }
 
 +(instancetype)randomItem

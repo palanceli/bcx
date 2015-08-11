@@ -13,7 +13,7 @@
 @property NSString *itemName;
 @property NSString *itemSerial;
 @property int valueInDollar;
-@property (readonly) NSDate *createdDate;
+@property NSDate *createdDate;
 
 -(instancetype)init;
 -(instancetype)initWithName:(NSString *)itemName serial:(NSString*)serial valueInDollar:(int)valueInDollar;

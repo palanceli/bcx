@@ -8,6 +8,8 @@
 
 #import "BNRDetailViewController.h"
 #import "BNRItem.h"
+#import "BNRItemCreateTimeViewController.h"
+
 
 @interface BNRDetailViewController()
 
@@ -48,5 +50,19 @@
     self.item.itemName = self.nameField.text;
     self.item.itemSerial = self.serialNumberField.text;
     self.item.valueInDollar = (int)[self.valueField.text integerValue];
+}
+- (IBAction)hideKeyboard:(id)sender
+{
+    [_nameField resignFirstResponder];
+    [_serialNumberField resignFirstResponder];
+    [_valueField resignFirstResponder];
+}
+
+- (IBAction)changeCreateTime:(id)sender
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+    BNRItemCreateTimeViewController *itemCreateTimeViewController = [storyboard instantiateViewControllerWithIdentifier:@"BNRItemCreateTimeViewController"];
+    [self.navigationController pushViewController:itemCreateTimeViewController animated:YES];
+    [itemCreateTimeViewController setItem:self.item];
 }
 @end
