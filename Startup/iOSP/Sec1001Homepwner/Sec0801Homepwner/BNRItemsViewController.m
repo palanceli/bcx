@@ -9,10 +9,11 @@
 #import "BNRItemsViewController.h"
 #import "BNRItemStore.h"
 #import "BNRItem.h"
+#import "BNRDetailViewController.h"
 
 @interface BNRItemsViewController ()
-@property (weak, nonatomic) IBOutlet UIView *headerView;
-
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *rightBarButtonItem;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *leftBarButtonItem;
 @end
 
 @implementation BNRItemsViewController
@@ -97,7 +98,12 @@
     UIImageView *imageView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:@"LoGCEA3.png"]];
     self.tableView.backgroundView = imageView;
     
-    [self.tableView setTableHeaderView:self.headerView];
+    
+    self.navigationItem.title = @"Homepwner";
+    
+    UIOffset offset = {-10, 0};
+    [self.rightBarButtonItem setTitlePositionAdjustment:offset forBarMetrics:UIBarMetricsDefault];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -108,15 +114,13 @@
 - (IBAction)toggleEditingMode:(id)sender {
     // 如果当前的视图控制对象已经处在编辑模式
     if(self.isEditing){
-        // 修改按钮文字，提示用户当前的表格状态
-        [sender setTitle:@"编辑" forState:UIControlStateNormal];
         // 关闭编辑模式
         [self setEditing:NO animated:YES];
+        self.navigationItem.leftBarButtonItem.title = @"编辑";
     }else{
-        // 修改按钮文字，提示用户当前的表格状态
-        [sender setTitle:@"完成" forState:UIControlStateNormal];
         // 开启编辑模式
         [self setEditing:YES animated:YES];
+        self.navigationItem.leftBarButtonItem.title = @"完成";
     }
 }
 
@@ -196,6 +200,7 @@
     return proposedDestinationIndexPath;
 }
 
+// 把最后一行设为不可删除
 - (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     if (indexPath.section == 1 && indexPath.row == [[BNRItemStore sharedStore] allItemsMoreThan50].count) {
@@ -203,5 +208,29 @@
     }
     
     return UITableViewCellEditingStyleDelete;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main"  bundle:nil];
+    BNRDetailViewController * detailViewController = [storyboard instantiateViewControllerWithIdentifier:@"DetailViewController"];
+
+    NSArray *allItems = nil;
+    if (indexPath.section == 0) {
+        allItems = [BNRItemStore sharedStore].allItemsLittleThan50;
+    }else{
+        allItems = [BNRItemStore sharedStore].allItemsMoreThan50;
+    }
+    
+    detailViewController.item = allItems[indexPath.row];
+    
+    [self.navigationController pushViewController:detailViewController animated:YES];
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [[BNRItemStore sharedStore] updateAllItems];
+    [self.tableView reloadData];
 }
 @end

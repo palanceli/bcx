@@ -90,4 +90,24 @@
     NSString* descriptionString = [NSString stringWithFormat:@"小于50：%@\n大于50：%@\n", self.privateItemsLittleThan50, self.privateItemsMoreThan50];
     return descriptionString;
 }
+
+-(void)updateAllItems
+{
+    NSMutableArray *items = [[NSMutableArray alloc]init];
+    for (BNRItem *item in self.privateItemsLittleThan50) {
+        [items addObject:item];
+    }
+    for (BNRItem *item in self.privateItemsMoreThan50) {
+        [items addObject:item];
+    }
+    [self.privateItemsLittleThan50 removeAllObjects];
+    [self.privateItemsMoreThan50 removeAllObjects];
+    for (BNRItem *item in items) {
+        if (item.valueInDollar > 50){
+            [self.privateItemsMoreThan50 addObject:item];
+        }else{
+            [self.privateItemsLittleThan50 addObject:item];
+        }
+    }
+}
 @end

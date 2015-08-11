@@ -20,5 +20,6 @@
 -(BNRItem *)createItem;
 -(void)removeItem:(BNRItem*)item;
 -(void)moveSectionItem:(NSInteger)section AtIndex:(NSUInteger)fromIndex toIndex:(NSUInteger)toIndex;
+-(void)updateAllItems;
 
 @end
