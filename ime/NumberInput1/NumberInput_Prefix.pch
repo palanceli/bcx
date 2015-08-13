@@ -1,0 +1,11 @@
+/*
+File:NumberInput_Prefix.pch
+
+Abstract: Standard precompiled prefix header.
+
+Version: 1.0
+*/
+
+#ifdef __OBJC__
+    #import <Cocoa/Cocoa.h>
+#endif
