@@ -19,22 +19,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.navigationController.navigationBar.translucent = NO;
+    
+    CGRect rtView = self.view.bounds;
     
     CGRect rect = self.scrollView.bounds;
     rect.size.width *= 2;
     self.scrollView.contentSize = rect.size;
     self.scrollView.pagingEnabled = YES;
-//
-//    CGRect rtViewA = self.scrollView.bounds;
-//    self.viewA = [[UIView alloc]initWithFrame:rtViewA];
-//    self.viewA.backgroundColor = [UIColor blackColor];
-//    [self.scrollView addSubview:self.viewA];
-//    
-//    CGRect rtViewB = self.scrollView.bounds;
-//    rtViewB.origin.x += rtViewA.size.width;
-//    self.viewB = [[UIView alloc]initWithFrame:rtViewB];
-//    self.viewB.backgroundColor = [UIColor grayColor];
-//    [self.scrollView addSubview:self.viewB];
+
+    CGRect rtViewA = self.scrollView.bounds;
+    self.viewA = [[UIView alloc]initWithFrame:rtViewA];
+    self.viewA.backgroundColor = [UIColor blackColor];
+    [self.scrollView addSubview:self.viewA];
+    
+    CGRect rtViewB = self.scrollView.bounds;
+    rtViewB.origin.x += rtViewA.size.width;
+    self.viewB = [[UIView alloc]initWithFrame:rtViewB];
+    self.viewB.backgroundColor = [UIColor grayColor];
+    [self.scrollView addSubview:self.viewB];
 }
 
 -(void)viewDidAppear:(BOOL)animated
