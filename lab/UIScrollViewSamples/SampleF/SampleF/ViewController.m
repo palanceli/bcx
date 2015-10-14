@@ -11,6 +11,8 @@
 @interface ViewController ()
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (strong, nonatomic) UIView *viewA;
+@property (strong, nonatomic) UIView *viewB;
 @end
 
 @implementation ViewController
@@ -29,24 +31,39 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
     
-    CGRect rect = self.scrollView.frame;
-    rect.size.width *= 2;
-//    rect.size.height -= self.navigationController.navigationBar.frame.size.height;
-    rect.size.height -= 64;
-    self.scrollView.contentSize = rect.size;
+//    CGRect rect = self.scrollView.frame;
+//    rect.size.width *= 2;
+////    rect.size.height -= self.navigationController.navigationBar.frame.size.height;
+//    rect.size.height -= 64;
+//    self.scrollView.contentSize = rect.size;
     self.scrollView.pagingEnabled = YES;
-    
-    CGRect rtA = self.scrollView.bounds;
-    UIView *viewA = [[UIView alloc]initWithFrame:rtA];
-    viewA.backgroundColor = [UIColor redColor];
-    
-    CGRect rtB = self.scrollView.bounds;
-    rtB.origin.x += rtA.size.width;
-    UIView *viewB = [[UIView alloc]initWithFrame:rtB];
-    viewB.backgroundColor = [UIColor blueColor];
-    
-    [self.scrollView addSubview:viewA];
-    [self.scrollView addSubview:viewB];
+	
+    self.viewA = [[UIView alloc]init];
+    self.viewA.backgroundColor = [UIColor redColor];
+	[self.scrollView addSubview:self.viewA];
+	
+    self.viewB = [[UIView alloc]init];
+    self.viewB.backgroundColor = [UIColor blueColor];
+	[self.scrollView addSubview:self.viewB];
+}
+
+-(void)viewDidLayoutSubviews
+{
+	[super viewDidLayoutSubviews];
+	
+	CGRect rect = self.scrollView.frame;
+	rect.size.width *= 2;
+	self.scrollView.contentSize = rect.size;
+	
+	CGRect rtViewA = self.scrollView.frame;
+	rtViewA.origin.x = 0;
+	rtViewA.origin.y = 0;
+	self.viewA.frame = rtViewA;
+	
+	CGRect rtViewB = self.scrollView.frame;
+	rtViewB.origin.x = rtViewB.size.width;
+	rtViewB.origin.y = 0;
+	self.viewB.frame = rtViewB;
 }
 
 - (void)didReceiveMemoryWarning {
