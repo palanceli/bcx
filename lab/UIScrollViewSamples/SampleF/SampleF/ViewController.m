@@ -31,11 +31,6 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
     
-//    CGRect rect = self.scrollView.frame;
-//    rect.size.width *= 2;
-////    rect.size.height -= self.navigationController.navigationBar.frame.size.height;
-//    rect.size.height -= 64;
-//    self.scrollView.contentSize = rect.size;
     self.scrollView.pagingEnabled = YES;
 	
     self.viewA = [[UIView alloc]init];

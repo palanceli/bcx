@@ -21,8 +21,6 @@
     [super viewDidLoad];
     self.navigationController.navigationBar.translucent = NO;
     
-    CGRect rtView = self.view.bounds;
-    
     CGRect rect = self.scrollView.bounds;
     rect.size.width *= 2;
     self.scrollView.contentSize = rect.size;
